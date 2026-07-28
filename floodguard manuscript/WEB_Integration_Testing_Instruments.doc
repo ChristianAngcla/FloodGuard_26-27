@@ -1,0 +1,161 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><title>Web Integration Testing Instruments</title>
+<style>
+  body { font-family: Arial, sans-serif; }
+  table { border-collapse: collapse; width: 100%; margin-bottom: 40px; }
+  th, td { border: 1px solid black; padding: 8px; }
+  .header-bg { background-color: #d9d9d9; }
+</style>
+</head>
+<body>
+
+<h1>WEB INTEGRATION TESTING INSTRUMENTS</h1>
+<p><b>System:</b> FloodGuard Web Administration Dashboard</p>
+
+<!-- SCENARIO 1 -->
+<table>
+  <tr class="header-bg">
+    <td colspan="2" align="center"><h2>INTEGRATION TEST DOCUMENT</h2></td>
+    <td><b>Modules/Components Integration Points</b></td>
+    <td colspan="3">Admin Login UI -> Authentication API -> Admin Database -> Session Token</td>
+  </tr>
+  <tr>
+    <td><b>IT-ID</b></td><td align="center">WEB-IT-001</td>
+    <td><b>Description</b></td><td colspan="3">Verify that login functionalities work correctly in the web application using shared authentication APIs.</td>
+  </tr>
+  <tr>
+    <td><b>Date/Time Tested</b></td><td align="center">July 28, 2026</td>
+    <td><b>Type of System</b></td><td colspan="3">Web Application</td>
+  </tr>
+  <tr class="header-bg">
+    <td><b>Pre-conditions</b></td><td colspan="5">System is hosted. Admin account exists in the database.</td>
+  </tr>
+  <tr class="header-bg" align="center" style="font-weight: bold;">
+    <td>Test Cycle</td><td>Steps/Actions</td><td>Data</td><td>Expected Results</td><td>Actual Results</td><td>Pass/Fail</td>
+  </tr>
+  <tr>
+    <td align="center">1</td><td>1. Navigate to Web Login Page<br>2. Enter valid admin credentials<br>3. Click Login Button</td>
+    <td>Admin Username/Password</td>
+    <td>API authenticates credentials with the database and returns a secure session token. User is redirected to Dashboard.</td>
+    <td>Dashboard displayed. Session token generated successfully.</td><td>Pass</td>
+  </tr>
+</table>
+
+<!-- SCENARIO 2 -->
+<table>
+  <tr class="header-bg">
+    <td colspan="2" align="center"><h2>INTEGRATION TEST DOCUMENT</h2></td>
+    <td><b>Modules/Components Integration Points</b></td>
+    <td colspan="3">Web Map UI -> Analytics Engine API (/api/status) -> Open-Meteo API</td>
+  </tr>
+  <tr>
+    <td><b>IT-ID</b></td><td align="center">WEB-IT-002</td>
+    <td><b>Description</b></td><td colspan="3">Verify that the Web Flood Map retrieves and integrates real-time telemetry and weather prediction data from the Analytics Engine.</td>
+  </tr>
+  <tr>
+    <td><b>Date/Time Tested</b></td><td align="center">July 28, 2026</td>
+    <td><b>Type of System</b></td><td colspan="3">Web Application</td>
+  </tr>
+  <tr class="header-bg">
+    <td><b>Pre-conditions</b></td><td colspan="5">Analytics Engine API is online.</td>
+  </tr>
+  <tr class="header-bg" align="center" style="font-weight: bold;">
+    <td>Test Cycle</td><td>Steps/Actions</td><td>Data</td><td>Expected Results</td><td>Actual Results</td><td>Pass/Fail</td>
+  </tr>
+  <tr>
+    <td align="center">1</td><td>1. Navigate to Dashboard Map<br>2. Click on Barangay (Concepcion Dos)</td>
+    <td>Barangay Name, API JSON payload</td>
+    <td>Frontend parses the JSON payload, maps the barangay to the correct sensor group, and displays the dynamic 11m-baseline gauge and satellite weather.</td>
+    <td>Gauge and weather cards visualize API payload seamlessly.</td><td>Pass</td>
+  </tr>
+</table>
+
+<!-- SCENARIO 3 -->
+<table>
+  <tr class="header-bg">
+    <td colspan="2" align="center"><h2>INTEGRATION TEST DOCUMENT</h2></td>
+    <td><b>Modules/Components Integration Points</b></td>
+    <td colspan="3">Web Emergency Feed -> Firestore Database API -> Mobile Submissions</td>
+  </tr>
+  <tr>
+    <td><b>IT-ID</b></td><td align="center">WEB-IT-003</td>
+    <td><b>Description</b></td><td colspan="3">Verify that the Web Admin panel successfully receives and displays SOS emergency reports submitted by mobile users.</td>
+  </tr>
+  <tr>
+    <td><b>Date/Time Tested</b></td><td align="center">July 28, 2026</td>
+    <td><b>Type of System</b></td><td colspan="3">Web Application</td>
+  </tr>
+  <tr class="header-bg">
+    <td><b>Pre-conditions</b></td><td colspan="5">A mobile user has recently submitted an emergency report to the Firebase database.</td>
+  </tr>
+  <tr class="header-bg" align="center" style="font-weight: bold;">
+    <td>Test Cycle</td><td>Steps/Actions</td><td>Data</td><td>Expected Results</td><td>Actual Results</td><td>Pass/Fail</td>
+  </tr>
+  <tr>
+    <td align="center">1</td><td>1. Navigate to Web Emergency Reports Feed<br>2. Verify incoming data stream</td>
+    <td>Firestore JSON Document (GPS, Timestamp, User ID)</td>
+    <td>Web interface successfully connects to the database listener and renders the new emergency report with accurate GPS location and timestamps.</td>
+    <td>New report renders instantly on the admin screen.</td><td>Pass</td>
+  </tr>
+</table>
+
+<!-- SCENARIO 4 -->
+<table>
+  <tr class="header-bg">
+    <td colspan="2" align="center"><h2>INTEGRATION TEST DOCUMENT</h2></td>
+    <td><b>Modules/Components Integration Points</b></td>
+    <td colspan="3">System Diagnostics UI -> External Service APIs (PAGASA, Open-Meteo) -> Health Check Module</td>
+  </tr>
+  <tr>
+    <td><b>IT-ID</b></td><td align="center">WEB-IT-004</td>
+    <td><b>Description</b></td><td colspan="3">Verify that the Web System Diagnostics page accurately pings and reports the live health status of all integrated third-party APIs.</td>
+  </tr>
+  <tr>
+    <td><b>Date/Time Tested</b></td><td align="center">July 28, 2026</td>
+    <td><b>Type of System</b></td><td colspan="3">Web Application</td>
+  </tr>
+  <tr class="header-bg">
+    <td><b>Pre-conditions</b></td><td colspan="5">All third-party services are currently operational.</td>
+  </tr>
+  <tr class="header-bg" align="center" style="font-weight: bold;">
+    <td>Test Cycle</td><td>Steps/Actions</td><td>Data</td><td>Expected Results</td><td>Actual Results</td><td>Pass/Fail</td>
+  </tr>
+  <tr>
+    <td align="center">1</td><td>1. Navigate to System Diagnostics Page<br>2. Observe health check sequence</td>
+    <td>HTTP Ping Responses</td>
+    <td>The system successfully pings the DOST-PAGASA Telemetry Link and Open-Meteo satellite API, returning an "Online" status if HTTP 200 OK is received.</td>
+    <td>All systems correctly report "Online" status.</td><td>Pass</td>
+  </tr>
+</table>
+
+<!-- SCENARIO 5 -->
+<table>
+  <tr class="header-bg">
+    <td colspan="2" align="center"><h2>INTEGRATION TEST DOCUMENT</h2></td>
+    <td><b>Modules/Components Integration Points</b></td>
+    <td colspan="3">Admin Alert Trigger -> Backend Communication API -> Firebase Cloud Messaging (FCM)</td>
+  </tr>
+  <tr>
+    <td><b>IT-ID</b></td><td align="center">WEB-IT-005</td>
+    <td><b>Description</b></td><td colspan="3">Verify that triggering an evacuation alert from the Web Admin panel successfully pushes the payload to the FCM API for broadcast.</td>
+  </tr>
+  <tr>
+    <td><b>Date/Time Tested</b></td><td align="center">July 28, 2026</td>
+    <td><b>Type of System</b></td><td colspan="3">Web Application</td>
+  </tr>
+  <tr class="header-bg">
+    <td><b>Pre-conditions</b></td><td colspan="5">Admin has appropriate privileges to send city-wide alerts.</td>
+  </tr>
+  <tr class="header-bg" align="center" style="font-weight: bold;">
+    <td>Test Cycle</td><td>Steps/Actions</td><td>Data</td><td>Expected Results</td><td>Actual Results</td><td>Pass/Fail</td>
+  </tr>
+  <tr>
+    <td align="center">1</td><td>1. Click "Send Evacuation Alert"<br>2. Confirm execution</td>
+    <td>Alert Payload (Message, Target Barangay)</td>
+    <td>The Web client successfully POSTs the payload to the backend API, which then successfully authenticates and triggers the FCM broadcast sequence.</td>
+    <td>API returns success; alert payload is dispatched to FCM.</td><td>Pass</td>
+  </tr>
+</table>
+
+</body>
+</html>

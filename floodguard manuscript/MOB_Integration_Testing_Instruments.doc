@@ -1,0 +1,161 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><title>Mobile Integration Testing Instruments</title>
+<style>
+  body { font-family: Arial, sans-serif; }
+  table { border-collapse: collapse; width: 100%; margin-bottom: 40px; }
+  th, td { border: 1px solid black; padding: 8px; }
+  .header-bg { background-color: #d9d9d9; }
+</style>
+</head>
+<body>
+
+<h1>MOBILE INTEGRATION TESTING INSTRUMENTS</h1>
+<p><b>System:</b> FloodGuard Flutter Mobile Application</p>
+
+<!-- SCENARIO 1 -->
+<table>
+  <tr class="header-bg">
+    <td colspan="2" align="center"><h2>INTEGRATION TEST DOCUMENT</h2></td>
+    <td><b>Modules/Components Integration Points</b></td>
+    <td colspan="3">Mobile App Login UI -> Firebase Auth API -> OTP Gateway -> Firestore User DB</td>
+  </tr>
+  <tr>
+    <td><b>IT-ID</b></td><td align="center">MOB-IT-001</td>
+    <td><b>Description</b></td><td colspan="3">Verify that the mobile app successfully communicates with Firebase Authentication to verify mobile numbers and create secure user sessions.</td>
+  </tr>
+  <tr>
+    <td><b>Date/Time Tested</b></td><td align="center">July 28, 2026</td>
+    <td><b>Type of System</b></td><td colspan="3">Mobile Application</td>
+  </tr>
+  <tr class="header-bg">
+    <td><b>Pre-conditions</b></td><td colspan="5">App is installed on a device with network access. Device SHA fingerprints are registered in Firebase Console.</td>
+  </tr>
+  <tr class="header-bg" align="center" style="font-weight: bold;">
+    <td>Test Cycle</td><td>Steps/Actions</td><td>Data</td><td>Expected Results</td><td>Actual Results</td><td>Pass/Fail</td>
+  </tr>
+  <tr>
+    <td align="center">1</td><td>1. Enter mobile number in Login screen<br>2. Submit valid OTP (or Emergency Bypass)</td>
+    <td>Phone Number, OTP Code</td>
+    <td>App successfully sends OTP payload to Firebase API, receives a valid auth token, and queries Firestore to load the user's saved profile.</td>
+    <td>User is securely logged in and redirected to Home Map.</td><td>Pass</td>
+  </tr>
+</table>
+
+<!-- SCENARIO 2 -->
+<table>
+  <tr class="header-bg">
+    <td colspan="2" align="center"><h2>INTEGRATION TEST DOCUMENT</h2></td>
+    <td><b>Modules/Components Integration Points</b></td>
+    <td colspan="3">Mobile Map UI -> Analytics Engine API (/api/status) -> Background Timer Polling</td>
+  </tr>
+  <tr>
+    <td><b>IT-ID</b></td><td align="center">MOB-IT-002</td>
+    <td><b>Description</b></td><td colspan="3">Verify that the Mobile Flood Map retrieves real-time telemetry from the Analytics Engine and automatically refreshes via the 3-minute background timer integration.</td>
+  </tr>
+  <tr>
+    <td><b>Date/Time Tested</b></td><td align="center">July 28, 2026</td>
+    <td><b>Type of System</b></td><td colspan="3">Mobile Application</td>
+  </tr>
+  <tr class="header-bg">
+    <td><b>Pre-conditions</b></td><td colspan="5">Analytics Engine API is online.</td>
+  </tr>
+  <tr class="header-bg" align="center" style="font-weight: bold;">
+    <td>Test Cycle</td><td>Steps/Actions</td><td>Data</td><td>Expected Results</td><td>Actual Results</td><td>Pass/Fail</td>
+  </tr>
+  <tr>
+    <td align="center">1</td><td>1. Navigate to Mobile Map<br>2. Wait 3 minutes for Auto-Refresh timer</td>
+    <td>API JSON payload, Internal Timer</td>
+    <td>The background timer successfully triggers an HTTP GET request to the API, parses the JSON payload, and updates the UI timestamp without freezing the app.</td>
+    <td>Data refreshes silently; UI timestamp updates accurately.</td><td>Pass</td>
+  </tr>
+</table>
+
+<!-- SCENARIO 3 -->
+<table>
+  <tr class="header-bg">
+    <td colspan="2" align="center"><h2>INTEGRATION TEST DOCUMENT</h2></td>
+    <td><b>Modules/Components Integration Points</b></td>
+    <td colspan="3">Emergency SOS Form -> Device Geolocation API -> Firestore Database API</td>
+  </tr>
+  <tr>
+    <td><b>IT-ID</b></td><td align="center">MOB-IT-003</td>
+    <td><b>Description</b></td><td colspan="3">Verify that submitting an SOS report successfully integrates with the hardware GPS to attach coordinates before writing the payload to the cloud database.</td>
+  </tr>
+  <tr>
+    <td><b>Date/Time Tested</b></td><td align="center">July 28, 2026</td>
+    <td><b>Type of System</b></td><td colspan="3">Mobile Application</td>
+  </tr>
+  <tr class="header-bg">
+    <td><b>Pre-conditions</b></td><td colspan="5">Device Location Services are enabled. User grants location permissions to the app.</td>
+  </tr>
+  <tr class="header-bg" align="center" style="font-weight: bold;">
+    <td>Test Cycle</td><td>Steps/Actions</td><td>Data</td><td>Expected Results</td><td>Actual Results</td><td>Pass/Fail</td>
+  </tr>
+  <tr>
+    <td align="center">1</td><td>1. Open SOS Form<br>2. Complete form (photo optional)<br>3. Submit Report</td>
+    <td>Form Data, GPS Coordinates (Lat/Long)</td>
+    <td>The app successfully queries the hardware Geolocation API, appends the precise coordinates to the JSON payload, and POSTs it to the Firestore database.</td>
+    <td>Report submitted successfully with accurate GPS tagging.</td><td>Pass</td>
+  </tr>
+</table>
+
+<!-- SCENARIO 4 -->
+<table>
+  <tr class="header-bg">
+    <td colspan="2" align="center"><h2>INTEGRATION TEST DOCUMENT</h2></td>
+    <td><b>Modules/Components Integration Points</b></td>
+    <td colspan="3">Firebase Cloud Messaging (FCM) API -> Mobile OS Notification Service -> Background Listener</td>
+  </tr>
+  <tr>
+    <td><b>IT-ID</b></td><td align="center">MOB-IT-004</td>
+    <td><b>Description</b></td><td colspan="3">Verify that the mobile app successfully receives and parses incoming broadcast push notifications (FCM payloads) from the backend, even when running in the background.</td>
+  </tr>
+  <tr>
+    <td><b>Date/Time Tested</b></td><td align="center">July 28, 2026</td>
+    <td><b>Type of System</b></td><td colspan="3">Mobile Application</td>
+  </tr>
+  <tr class="header-bg">
+    <td><b>Pre-conditions</b></td><td colspan="5">App is installed. Device is registered to FCM topics (e.g., specific barangay alerts).</td>
+  </tr>
+  <tr class="header-bg" align="center" style="font-weight: bold;">
+    <td>Test Cycle</td><td>Steps/Actions</td><td>Data</td><td>Expected Results</td><td>Actual Results</td><td>Pass/Fail</td>
+  </tr>
+  <tr>
+    <td align="center">1</td><td>1. Trigger test alert from backend<br>2. Observe mobile device (app in background)</td>
+    <td>FCM JSON Payload (Title, Body)</td>
+    <td>The device OS successfully receives the FCM payload, triggers the background listener, and displays a system-level push notification to the user.</td>
+    <td>Push notification appears instantly on the device lockscreen.</td><td>Pass</td>
+  </tr>
+</table>
+
+<!-- SCENARIO 5 -->
+<table>
+  <tr class="header-bg">
+    <td colspan="2" align="center"><h2>INTEGRATION TEST DOCUMENT</h2></td>
+    <td><b>Modules/Components Integration Points</b></td>
+    <td colspan="3">Mobile Profile UI -> Firestore Database API -> User Auth Session</td>
+  </tr>
+  <tr>
+    <td><b>IT-ID</b></td><td align="center">MOB-IT-005</td>
+    <td><b>Description</b></td><td colspan="3">Verify that changes made in the User Profile (e.g., updating emergency contacts or barangay address) successfully sync with the cloud database.</td>
+  </tr>
+  <tr>
+    <td><b>Date/Time Tested</b></td><td align="center">July 28, 2026</td>
+    <td><b>Type of System</b></td><td colspan="3">Mobile Application</td>
+  </tr>
+  <tr class="header-bg">
+    <td><b>Pre-conditions</b></td><td colspan="5">User is logged in with an active auth session.</td>
+  </tr>
+  <tr class="header-bg" align="center" style="font-weight: bold;">
+    <td>Test Cycle</td><td>Steps/Actions</td><td>Data</td><td>Expected Results</td><td>Actual Results</td><td>Pass/Fail</td>
+  </tr>
+  <tr>
+    <td align="center">1</td><td>1. Open Profile Screen<br>2. Change Barangay Address<br>3. Save Changes</td>
+    <td>Updated Profile JSON</td>
+    <td>The app validates the active session, sends an update request to the Firestore API, and successfully overwrites the previous data block in the cloud.</td>
+    <td>Profile updates successfully; changes persist after app restart.</td><td>Pass</td>
+  </tr>
+</table>
+
+</body>
+</html>

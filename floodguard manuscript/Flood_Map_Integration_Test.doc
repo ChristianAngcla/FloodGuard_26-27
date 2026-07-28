@@ -1,0 +1,79 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><title>Integration Test Document</title></head>
+<body>
+<table border="1" cellpadding="5" cellspacing="0" style="border-collapse: collapse; width: 100%; font-family: Arial, sans-serif;">
+  <tr style="background-color: #d9d9d9;">
+    <td colspan="2" align="center"><h2>INTEGRATION TEST DOCUMENT</h2></td>
+    <td><b>Modules/Components Integration Points</b></td>
+    <td colspan="3">Map UI (Frontend) -> Analytics Engine API (/api/status) -> Open-Meteo Satellite API -> Data Visualization</td>
+  </tr>
+  <tr>
+    <td><b>IT-ID</b></td>
+    <td align="center">002</td>
+    <td><b>Description</b></td>
+    <td colspan="3">Verify that the Flood Map module successfully retrieves and integrates real-time telemetry and weather prediction data from the Analytics Engine API.</td>
+  </tr>
+  <tr>
+    <td><b>Date/Time Tested</b></td>
+    <td align="center">July 28, 2026<br>6:00 PM</td>
+    <td><b>Type of System</b></td>
+    <td colspan="3">Web & Mobile Application</td>
+  </tr>
+  <tr style="background-color: #d9d9d9;">
+    <td><b>Pre-conditions</b></td>
+    <td colspan="5">System is hosted and online. Analytics Engine API and Open-Meteo API are reachable. User has navigated to the Map Dashboard.</td>
+  </tr>
+  <tr style="background-color: #d9d9d9; font-weight: bold;" align="center">
+    <td>Test Cycle</td>
+    <td>Steps/Actions</td>
+    <td>Data</td>
+    <td>Expected Results</td>
+    <td>Actual Results</td>
+    <td>Pass/Fail</td>
+  </tr>
+  <tr>
+    <td align="center">1</td>
+    <td>1. Navigate to the Home Map Screen.<br>2. Wait for initial API auto-fetch to trigger.</td>
+    <td>API Endpoint: GET /api/status</td>
+    <td>Map successfully loads. The system initiates an HTTP request to the Analytics Engine API without timing out.</td>
+    <td>Map loads, HTTP 200 OK received from API.</td>
+    <td>Pass</td>
+  </tr>
+  <tr>
+    <td align="center">2</td>
+    <td>1. Click on a specific Barangay polygon (e.g., Concepcion Dos).</td>
+    <td>Barangay Name: Concepcion Dos</td>
+    <td>The frontend successfully parses the API JSON response and correctly maps the barangay to the 'Nangka' sensor group data.</td>
+    <td>Barangay maps to correct sensor data and displays accurately.</td>
+    <td>Pass</td>
+  </tr>
+  <tr>
+    <td align="center">3</td>
+    <td>1. View the Water Level Gauge on the selected Barangay card.</td>
+    <td>API JSON payload (Live Water Level, Prediction)</td>
+    <td>The UI gauge successfully inherits the math from the API, displaying the live water level and dynamic predicted timeline.</td>
+    <td>Gauge visualizes the API payload seamlessly.</td>
+    <td>Pass</td>
+  </tr>
+  <tr>
+    <td align="center">4</td>
+    <td>1. View the Weather Cards (Rain, Temp, Heat Index, Wind).</td>
+    <td>API JSON payload (Weather Data)</td>
+    <td>The frontend successfully integrates and displays the external Open-Meteo weather variables parsed by the backend.</td>
+    <td>Weather cards display live satellite data accurately.</td>
+    <td>Pass</td>
+  </tr>
+  <tr>
+    <td align="center">5</td>
+    <td>1. Wait for 3 minutes for the Auto-Refresh cycle.</td>
+    <td>Timer trigger</td>
+    <td>The map UI silently fetches a fresh payload from the API in the background and updates the "Last updated" timestamp without freezing the map.</td>
+    <td>Timestamp updates silently; data refreshes automatically.</td>
+    <td>Pass</td>
+  </tr>
+  <tr>
+    <td colspan="6"><b>Comments/Remarks</b><br>Integration between the React/Flutter frontend and the Python Analytics Engine API is seamless. Data parsing (especially the barangay-to-sensor geographical mapping) functions exactly as mathematically intended.</td>
+  </tr>
+</table>
+</body>
+</html>
