@@ -1,0 +1,6 @@
+FLOODGUARD_PHASE_1B_INDEPENDENT_REVIEW_BUNDLE.zip
+SHA-256: 5d6366fdee5c730e0a5b9771ba90509332e90b55bcaa4ecc562daa96de318449
+File Size: 55614 bytes
+Total Files: 30
+CRC Integrity Test: PASS (Zero errors detected)
+Generated: 2026-08-19T09:47:08.826322+00:00

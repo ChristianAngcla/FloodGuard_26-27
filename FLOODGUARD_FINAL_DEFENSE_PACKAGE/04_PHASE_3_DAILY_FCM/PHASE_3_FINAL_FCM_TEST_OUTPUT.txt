@@ -1,0 +1,74 @@
+================================================================
+FLOODGUARD PHASE 3 FINAL DELIVERY-SEALED VERIFICATION SUITE
+================================================================
+
+[PASS] 1.1 Sto. NiÃ±o C9 Parity (Normal Operation)
+[PASS] 1.2 Sto. NiÃ±o C9 Persistence Fallback (Missing Rain)
+[PASS] 2.1 Nangka C4 Parity (Normal Operation)
+[PASS] 2.2 Nangka C4 Persistence Fallback (Missing Rain)
+[PASS] 3.1 Tumana C8 Parity (Normal Operation)
+[PASS] 3.2 Tumana C8 Persistence Fallback (Missing Science Garden Rain)
+[PASS] 3.3 Tumana Target Semantics & Strict Unmapped Restrictions
+[PASS] 4.1 [Phase 2] Separate Water & Rain Source Timestamps Across Midnight Boundary
+[PASS] 4.2 [Phase 2] Strict 24/24 Hourly Completeness (Sto & Nangka)
+[PASS] 6.1 Sto. NiÃ±o primary_model Message Format
+[PASS] 6.2 Nangka primary_model Message Format
+[PASS] 6.3 Persistence Fallback Message Text
+[PASS] 6.4 Tumana Message Semantics (Zero Threshold / Peak / Probability Wording)
+[PASS] 6.5 Tumana Unavailable Forecast Sends Nothing (Null Message)
+[PASS] 6.6 Sto/Nangka Unavailable Forecast Sends Nothing (Null Message)
+[*] Phase 3: Inspecting persisted DailyForecast records for 2026-08-20...
+[-] [nangka] No DailyForecast record found for 2026-08-20. Skipping FCM.
+[-] [tumana] No DailyForecast record found for 2026-08-20. Skipping FCM.
+[PASS] 6.7 [Required Test A] Firebase Unavailable Marks Record Failed (Never Sent)
+[*] Phase 3: Inspecting persisted DailyForecast records for 2026-08-20...
+[-] [nangka] No DailyForecast record found for 2026-08-20. Skipping FCM.
+[-] [tumana] No DailyForecast record found for 2026-08-20. Skipping FCM.
+[PASS] 6.8 [Required Test B] All Topic Sends Fail Marks Record Failed (Eligible for Retry)
+[*] Phase 3: Inspecting persisted DailyForecast records for 2026-08-20...
+ðŸ“¢ [Phase 3 FCM] Dispatched sto_nino advisory to [barangay_santo_nino]: "Forecast for Aug 20: 13.50 m (SAFE). Primary model."
+ðŸ“¢ [Phase 3 FCM] Dispatched sto_nino advisory to [barangay_calumpang]: "Forecast for Aug 20: 13.50 m (SAFE). Primary model."
+ðŸ“¢ [Phase 3 FCM] Dispatched sto_nino advisory to [barangay_industrial_valley]: "Forecast for Aug 20: 13.50 m (SAFE). Primary model."
+ðŸ“¢ [Phase 3 FCM] Dispatched sto_nino advisory to [barangay_barangka]: "Forecast for Aug 20: 13.50 m (SAFE). Primary model."
+ðŸ“¢ [Phase 3 FCM] Dispatched sto_nino advisory to [barangay_san_roque]: "Forecast for Aug 20: 13.50 m (SAFE). Primary model."
+ðŸ“¢ [Phase 3 FCM] Dispatched sto_nino advisory to [barangay_santa_elena]: "Forecast for Aug 20: 13.50 m (SAFE). Primary model."
+ðŸ“¢ [Phase 3 FCM] Dispatched sto_nino advisory to [barangay_tanong]: "Forecast for Aug 20: 13.50 m (SAFE). Primary model."
+ðŸ“¢ [Phase 3 FCM] Dispatched sto_nino advisory to [barangay_jesus_dela_pena]: "Forecast for Aug 20: 13.50 m (SAFE). Primary model."
+[-] [nangka] No DailyForecast record found for 2026-08-20. Skipping FCM.
+[-] [tumana] No DailyForecast record found for 2026-08-20. Skipping FCM.
+[PASS] 6.9 [Required Test C] Successful Delivery Marks Record Sent with Timestamp
+[*] Phase 3: Inspecting persisted DailyForecast records for 2026-08-20...
+[-] [sto_nino] Advisory for 2026-08-20 was already dispatched at Thu Aug 20 2026 15:00:00 GMT+0800 (Philippine Standard Time). Skipping deduplicated send.
+[-] [nangka] No DailyForecast record found for 2026-08-20. Skipping FCM.
+[-] [tumana] No DailyForecast record found for 2026-08-20. Skipping FCM.
+[PASS] 6.10 [Required Test D] Deduplicated Second Run Skips Dispatching
+[PASS] 6.11 [Required Test E] Atomic Concurrent Claim Prevents Race Conditions
+[PASS] 6.12 [Required Test F] Canonical Barangay Topic Consistency Across All Server Paths
+[PASS] 6.13 [Check I] Five-Minute Background Telemetry Sync Does NOT Trigger FCM
+[DailyScheduler] Manual forecast run triggered for target date: 2026-08-20 (sendNotifications: false)
+[DailyScheduler] Manual forecast run triggered for target date: 2026-08-20 (sendNotifications: true)
+[*] Phase 3: Inspecting persisted DailyForecast records for 2026-08-20...
+[-] [sto_nino] No DailyForecast record found for 2026-08-20. Skipping FCM.
+[-] [nangka] No DailyForecast record found for 2026-08-20. Skipping FCM.
+[-] [tumana] No DailyForecast record found for 2026-08-20. Skipping FCM.
+[PASS] 6.14 [Check J] Manual triggerManualForecastRun Defaults sendNotifications = false
+[PASS] 6.15 [Check K] Daily Notification Consumes Persisted DailyForecast, Not Live Sensors
+[PASS] 6.16 [Check L] Manual Admin Alert Endpoint Exists and Uses Canonical Topic Format
+[PASS] 7.1 Zero rejectUnauthorized: false Across Server Code
+[PASS] 7.2 Schema Validation for DailyForecast Deduplication & Sending Fields
+[PASS] 7.3 Server Critical Files Parse Successfully (node --check)
+
+================================================================
+TEST SUMMARY: 28/28 PASSED
+================================================================
+
+ALL PHASE 3 FINAL DELIVERY-SEALED TESTS PASSED SUCCESSFULLY.
+[!] Firebase Admin not initialized; cannot dispatch FCM for sto_nino. Setting notificationStatus = 'failed'.
+[!] FCM dispatch failed for barangay_santo_nino: Simulated FCM Network Timeout
+[!] FCM dispatch failed for barangay_calumpang: Simulated FCM Network Timeout
+[!] FCM dispatch failed for barangay_industrial_valley: Simulated FCM Network Timeout
+[!] FCM dispatch failed for barangay_barangka: Simulated FCM Network Timeout
+[!] FCM dispatch failed for barangay_san_roque: Simulated FCM Network Timeout
+[!] FCM dispatch failed for barangay_santa_elena: Simulated FCM Network Timeout
+[!] FCM dispatch failed for barangay_tanong: Simulated FCM Network Timeout
+[!] FCM dispatch failed for barangay_jesus_dela_pena: Simulated FCM Network Timeout

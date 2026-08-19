@@ -1,0 +1,31 @@
+================================================================
+FLOODGUARD PHASE 2 SEALED CLOSURE VERIFICATION SUITE
+================================================================
+
+[PASS] 1.1 Sto. NiÃ±o C9 Parity (Normal Operation)
+[PASS] 1.2 Sto. NiÃ±o C9 Persistence Fallback (Missing Rain)
+[PASS] 2.1 Nangka C4 Parity (Normal Operation)
+[PASS] 2.2 Nangka C4 Persistence Fallback (Missing Rain)
+[PASS] 3.1 Tumana C8 Parity (Normal Operation)
+[PASS] 3.2 Tumana C8 Persistence Fallback (Missing Science Garden Rain)
+[PASS] 3.3 Tumana Target Semantics & Strict Unmapped Restrictions
+[PASS] 4.1 [Test A] Separate Water & Rain Source Timestamps Across Midnight Boundary
+[PASS] 4.2 [Test B] Cached Rainfall Is Not Persisted as Raw Observation
+[PASS] 4.3 [Test C] Exact rf1hr Only (No rf10m or rf fallback; 0.0 is valid zero)
+[PASS] 4.4 [Test D] Source Observation Timestamp Determines Date & Hour (Midnight Crossover)
+[PASS] 4.5 [Test E] Strict Sto. NiÃ±o 24/24 Hourly Completeness (23 Hours Returns Null)
+[PASS] 4.6 [Test F] Strict Nangka 24/24 Hourly Completeness (23 Hours Returns Null)
+[PASS] 4.7 [Test G] Top-of-Hour Window Selection [h:00, h:05] & Out-of-Order Elimination
+[PASS] 4.8 [Test H] /api/status Forecast Source Separation & Tumana peak_predicted_level: null
+[PASS] 4.9 [Test I] True End-to-End Production Pipeline Execution & Upsert Idempotency
+[PASS] 5.1 Zero Occurrences of rejectUnauthorized: false in Server Code
+[PASS] 5.2 No Open-Meteo Ingestion in Active Daily Forecast Service
+[PASS] 5.3 Exact Calendar-Day Subtraction Logic (Leap Years, Month Transitions, Year Boundaries)
+[PASS] 5.4 Daily Scheduler 07:00 AM Asia/Manila (UTC+8) Timing Calculation
+[PASS] 5.5 Schema Validation for DailyObservation, DailyForecast, and RawTelemetryReading
+
+================================================================
+TEST SUMMARY: 21/21 PASSED
+================================================================
+
+ALL PHASE 2 SEALED CLOSURE VERIFICATION TESTS PASSED SUCCESSFULLY.

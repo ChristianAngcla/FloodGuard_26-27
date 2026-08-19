@@ -1,0 +1,200 @@
+================================================================
+FLOODGUARD PHASE 4 UI & MISSING-LIVE-DATA SAFETY VERIFICATION LOG
+================================================================
+Timestamp: 2026-08-19T21:42:00+08:00
+Environment: Windows 11 x64 / Node.js v20+ / Flutter 3.x / Python 3.11
+
+================================================================
+1. BACKEND REGRESSION SUITE EXECUTION
+================================================================
+Command: node server/tests/phase1b_tests.mjs
+Working Dir: FloodGuard-Website
+Exit Code: 0
+
+Output:
+================================================================
+FLOODGUARD PHASE 3 FINAL DELIVERY-SEALED VERIFICATION SUITE
+================================================================
+
+[PASS] 1.1 Sto. Niño C9 Parity (Normal Operation)
+[PASS] 1.2 Sto. Niño C9 Persistence Fallback (Missing Rain)
+[PASS] 2.1 Nangka C4 Parity (Normal Operation)
+[PASS] 2.2 Nangka C4 Persistence Fallback (Missing Rain)
+[PASS] 3.1 Tumana C8 Parity (Normal Operation)
+[PASS] 3.2 Tumana C8 Persistence Fallback (Missing Science Garden Rain)
+[PASS] 3.3 Tumana Target Semantics & Strict Unmapped Restrictions
+[PASS] 4.1 [Phase 2] Separate Water & Rain Source Timestamps Across Midnight Boundary
+[PASS] 4.2 [Phase 2] Strict 24/24 Hourly Completeness (Sto & Nangka)
+[PASS] 6.1 Sto. Niño primary_model Message Format
+[PASS] 6.2 Nangka primary_model Message Format
+[PASS] 6.3 Persistence Fallback Message Text
+[PASS] 6.4 Tumana Message Semantics (Zero Threshold / Peak / Probability Wording)
+[PASS] 6.5 Tumana Unavailable Forecast Sends Nothing (Null Message)
+[PASS] 6.6 Sto/Nangka Unavailable Forecast Sends Nothing (Null Message)
+[*] Phase 3: Inspecting persisted DailyForecast records for 2026-08-20...
+[!] Firebase Admin not initialized; cannot dispatch FCM for sto_nino. Setting notificationStatus = 'failed'.
+[-] [nangka] No DailyForecast record found for 2026-08-20. Skipping FCM.
+[-] [tumana] No DailyForecast record found for 2026-08-20. Skipping FCM.
+[PASS] 6.7 [Required Test A] Firebase Unavailable Marks Record Failed (Never Sent)
+[*] Phase 3: Inspecting persisted DailyForecast records for 2026-08-20...
+[!] FCM dispatch failed for barangay_santo_nino: Simulated FCM Network Timeout
+[!] FCM dispatch failed for barangay_calumpang: Simulated FCM Network Timeout
+[!] FCM dispatch failed for barangay_industrial_valley: Simulated FCM Network Timeout
+[!] FCM dispatch failed for barangay_barangka: Simulated FCM Network Timeout
+[!] FCM dispatch failed for barangay_san_roque: Simulated FCM Network Timeout
+[!] FCM dispatch failed for barangay_santa_elena: Simulated FCM Network Timeout
+[!] FCM dispatch failed for barangay_tanong: Simulated FCM Network Timeout
+[!] FCM dispatch failed for barangay_jesus_dela_pena: Simulated FCM Network Timeout
+[-] [nangka] No DailyForecast record found for 2026-08-20. Skipping FCM.
+[-] [tumana] No DailyForecast record found for 2026-08-20. Skipping FCM.
+[PASS] 6.8 [Required Test B] All Topic Sends Fail Marks Record Failed (Eligible for Retry)
+[*] Phase 3: Inspecting persisted DailyForecast records for 2026-08-20...
+📢 [Phase 3 FCM] Dispatched sto_nino advisory to [barangay_santo_nino]: "Forecast for Aug 20: 13.50 m (SAFE). Primary model."
+📢 [Phase 3 FCM] Dispatched sto_nino advisory to [barangay_calumpang]: "Forecast for Aug 20: 13.50 m (SAFE). Primary model."
+📢 [Phase 3 FCM] Dispatched sto_nino advisory to [barangay_industrial_valley]: "Forecast for Aug 20: 13.50 m (SAFE). Primary model."
+📢 [Phase 3 FCM] Dispatched sto_nino advisory to [barangay_barangka]: "Forecast for Aug 20: 13.50 m (SAFE). Primary model."
+📢 [Phase 3 FCM] Dispatched sto_nino advisory to [barangay_san_roque]: "Forecast for Aug 20: 13.50 m (SAFE). Primary model."
+📢 [Phase 3 FCM] Dispatched sto_nino advisory to [barangay_santa_elena]: "Forecast for Aug 20: 13.50 m (SAFE). Primary model."
+📢 [Phase 3 FCM] Dispatched sto_nino advisory to [barangay_tanong]: "Forecast for Aug 20: 13.50 m (SAFE). Primary model."
+📢 [Phase 3 FCM] Dispatched sto_nino advisory to [barangay_jesus_dela_pena]: "Forecast for Aug 20: 13.50 m (SAFE). Primary model."
+[-] [nangka] No DailyForecast record found for 2026-08-20. Skipping FCM.
+[-] [tumana] No DailyForecast record found for 2026-08-20. Skipping FCM.
+[PASS] 6.9 [Required Test C] Successful Delivery Marks Record Sent with Timestamp
+[*] Phase 3: Inspecting persisted DailyForecast records for 2026-08-20...
+[-] [sto_nino] Advisory for 2026-08-20 was already dispatched at Thu Aug 20 2026 15:00:00 GMT+0800 (Philippine Standard Time). Skipping deduplicated send.
+[-] [nangka] No DailyForecast record found for 2026-08-20. Skipping FCM.
+[-] [tumana] No DailyForecast record found for 2026-08-20. Skipping FCM.
+[PASS] 6.10 [Required Test D] Deduplicated Second Run Skips Dispatching
+[PASS] 6.11 [Required Test E] Atomic Concurrent Claim Prevents Race Conditions
+[PASS] 6.12 [Required Test F] Canonical Barangay Topic Consistency Across All Server Paths
+[PASS] 6.13 [Check I] Five-Minute Background Telemetry Sync Does NOT Trigger FCM
+[DailyScheduler] Manual forecast run triggered for target date: 2026-08-20 (sendNotifications: false)
+[DailyScheduler] Manual forecast run triggered for target date: 2026-08-20 (sendNotifications: true)
+[*] Phase 3: Inspecting persisted DailyForecast records for 2026-08-20...
+[-] [sto_nino] No DailyForecast record found for 2026-08-20. Skipping FCM.
+[-] [nangka] No DailyForecast record found for 2026-08-20. Skipping FCM.
+[-] [tumana] No DailyForecast record found for 2026-08-20. Skipping FCM.
+[PASS] 6.14 [Check J] Manual triggerManualForecastRun Defaults sendNotifications = false
+[PASS] 6.15 [Check K] Daily Notification Consumes Persisted DailyForecast, Not Live Sensors
+[PASS] 6.16 [Check L] Manual Admin Alert Endpoint Exists and Uses Canonical Topic Format
+[PASS] 7.1 Zero rejectUnauthorized: false Across Server Code
+[PASS] 7.2 Schema Validation for DailyForecast Deduplication & Sending Fields
+[PASS] 7.3 Server Critical Files Parse Successfully (node --check)
+
+================================================================
+TEST SUMMARY: 28/28 PASSED
+================================================================
+
+================================================================
+2. SERVER CRITICAL SYNTAX CHECK
+================================================================
+Command: node --check server/index.js
+Working Dir: FloodGuard-Website
+Exit Code: 0
+Result: Clean syntax, zero parsing errors.
+
+================================================================
+3. REACT CLIENT PRODUCTION BUILD
+================================================================
+Command: npm run build
+Working Dir: FloodGuard-Website
+Exit Code: 0
+
+Output:
+> floodguard@0.0.0 build
+> vite build
+
+vite v7.3.2 building client environment for production...
+transforming...
+✓ 475 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                               0.47 kB │ gzip:   0.30 kB
+dist/assets/RiverDredging-DOi-IgEA.jpg       55.74 kB
+dist/assets/pagasa_logo-Bbc_rvQO.png        180.71 kB
+dist/assets/Inter-Regular-Dou9gfMK.ttf      342.48 kB
+dist/assets/Inter-Medium-Bf4RgI7V.ttf       342.81 kB
+dist/assets/Inter-Bold-BVTOCPiq.ttf         344.15 kB
+dist/assets/Inter-ExtraBold-CH2I3-2X.ttf    344.69 kB
+dist/assets/CreekCleaning-Cxk-A3W_.jpg      597.87 kB
+dist/assets/RoadPainting-DZAuzkZ8.jpg       663.19 kB
+dist/assets/phone-C4M3XbUs.png              748.54 kB
+dist/assets/floodguard-logo-evHxTw1L.png  1,696.48 kB
+dist/assets/backgroundhero-DEyeaa9d.mp4   3,773.66 kB
+dist/assets/index-Cg8p0NVp.css               73.63 kB │ gzip:  17.50 kB
+dist/assets/index-BkGmCf5C.js               792.73 kB │ gzip: 228.28 kB
+✓ built in 5.22s
+
+================================================================
+4. ADMIN CLIENT PRODUCTION BUILD
+================================================================
+Command: npm run build
+Working Dir: FloodGuardAI-ADMIN
+Exit Code: 0
+
+Output:
+> floodguard@0.0.0 build
+> vite build
+
+vite v7.3.2 building client environment for production...
+transforming...
+✓ 96 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                               0.47 kB │ gzip:   0.30 kB
+dist/assets/pagasa_logo-Bbc_rvQO.png        180.71 kB
+dist/assets/floodguard-logo-evHxTw1L.png  1,696.48 kB
+dist/assets/index-ImwEEODl.css               32.18 kB │ gzip:  10.44 kB
+dist/assets/index-Dvsidx2k.js               534.88 kB │ gzip: 159.99 kB
+✓ built in 2.75s
+
+================================================================
+5. FLUTTER STATIC ANALYSIS
+================================================================
+Command: flutter analyze
+Working Dir: FloodGuard-AI-Mobile
+Exit Code: 0
+
+Output:
+Analyzing FloodGuard-AI-Mobile...                               
+No issues found! (ran in 6.9s)
+
+================================================================
+6. FLUTTER DEBUG BUILD VERIFICATION
+================================================================
+Command: flutter build apk --debug
+Working Dir: FloodGuard-AI-Mobile
+Exit Code: 0
+
+Output:
+Running Gradle task 'assembleDebug'...                          
+Warning: SDK processing. This version only understands SDK XML versions up to 3 but an SDK XML file of version 4 was encountered. This can happen if you use versions of Android Studio and the command-line tools that were released at different times.
+Running Gradle task 'assembleDebug'...                             43.0s
+√ Built build\app\outputs\flutter-apk\app-debug.apk
+
+================================================================
+7. FOCUSED DATA-PATH & MISSING-LIVE-DATA REGRESSION CHECKS
+================================================================
+[CHECK A - MISSING LIVE REMAINS MISSING]
+- Fixture: live_sensors.sto_nino = null, daily forecast Sto = 17.20
+- Result: FloodData.waterLevel is null (NOT 0.0, NOT 17.20). [PASS]
+
+[CHECK B - MISSING LIVE IS NOT SAFE]
+- Fixture: live_sensors.sto_nino = null
+- Result: Live monitoring status is 'unavailable' (riskLevel = 0). Map marker renders neutral slate-gray Unavailable state with cloud-off icon (NOT green Safe). [PASS]
+
+[CHECK C - MISSING LIVE CANNOT TRIGGER WARNING]
+- Fixture: live sensor = null, daily forecast = CRITICAL / 17.20
+- Result: _checkEarlyWarning() skips evaluation on null level and produces no live warning popup. Separate daily forecast card renders 17.20 CRITICAL via backend statusBand. [PASS]
+
+[CHECK D - REAL ZERO IS PRESERVED]
+- Fixture: live_sensors.sto_nino = 0.0 (valid numeric observation)
+- Result: FloodData.waterLevel = 0.0, status = 'safe', riskLevel = 15. Valid numeric zero is not converted to null. [PASS]
+
+[CHECK E - NORMAL LIVE VALUE STILL WORKS]
+- Fixture: live_sensors.sto_nino = 16.20
+- Result: FloodData.waterLevel = 16.20, status = 'warning', riskLevel = 75. Live station threshold classification operates normally on observed telemetry. [PASS]
+
+[CHECK F - DAILY FORECAST REMAINS SEPARATE & UNTOUCHED]
+- Verified: Daily forecast cards consume GET /api/forecasts/daily and render backend statusBand directly.
+- Verified: Tumana daily forecast remains strictly unmapped (no threshold mapping, no alarm badges, no gauge). [PASS]

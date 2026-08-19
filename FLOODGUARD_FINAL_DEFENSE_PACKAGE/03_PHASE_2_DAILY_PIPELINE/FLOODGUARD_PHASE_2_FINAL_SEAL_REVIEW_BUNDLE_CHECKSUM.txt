@@ -1,0 +1,6 @@
+FLOODGUARD_PHASE_2_FINAL_SEAL_REVIEW_BUNDLE.zip
+SHA-256: 4b4eeb756c2c6d3648f065ad7ad4d345217d1677c3a827e29fc833ca4477a4a6
+File Size: 42223 bytes
+Total Files: 17
+CRC Integrity Test: PASS (Zero errors detected)
+Generated: 2026-08-19T12:01:19.131464+00:00

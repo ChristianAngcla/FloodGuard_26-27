@@ -1,0 +1,148 @@
+================================================================
+FLOODGUARD PHASE 3 FINAL DELIVERY-SEALED VERIFICATION SUITE
+================================================================
+
+[PASS] 1.1 Sto. Niño C9 Parity (Normal Operation)
+[PASS] 1.2 Sto. Niño C9 Persistence Fallback (Missing Rain)
+[PASS] 2.1 Nangka C4 Parity (Normal Operation)
+[PASS] 2.2 Nangka C4 Persistence Fallback (Missing Rain)
+[PASS] 3.1 Tumana C8 Parity (Normal Operation)
+[PASS] 3.2 Tumana C8 Persistence Fallback (Missing Science Garden Rain)
+[PASS] 3.3 Tumana Target Semantics & Official Operational Thresholds
+[PASS] 3.4 [Tumana Live A] Water Level 16.00 m -> SAFE
+[PASS] 3.5 [Tumana Live B] Water Level 17.26 m -> ALERT
+[PASS] 3.6 [Tumana Live C] Water Level 18.26 m -> ALARM (WARNING)
+[PASS] 3.7 [Tumana Live D] Water Level 19.26 m -> CRITICAL
+[PASS] 3.8 [Tumana Live E] Water Level null -> UNAVAILABLE (Never 0 or SAFE)
+[PASS] 3.9 [Tumana Case F] Daily CRITICAL forecast + Live 14.00 m -> Daily Forecast CRITICAL band, Live remains SAFE, No Live Emergency FCM from daily forecast
+[PASS] 3.10 [Tumana Case G] Live 19.50 m + Daily SAFE forecast -> Live CRITICAL Emergency FCM, Daily Forecast remains separate
+[PASS] 3.11 [Tumana Live Transition & Escalation Rule] State Machine Dedup
+[PASS] 3.12 [Tumana Live-FCM Barangay Fanout] Resolves Confirmed 5 Barangays & Topics
+[PASS] 4.1 [Phase 2] Separate Water & Rain Source Timestamps Across Midnight Boundary
+[PASS] 4.2 [Phase 2] Strict 24/24 Hourly Completeness (Sto & Nangka)
+[PASS] 6.1 Sto. Niño primary_model Message Format
+[PASS] 6.2 Nangka primary_model Message Format
+[PASS] 6.3 Persistence Fallback Message Text
+[PASS] 6.4 Tumana Message Semantics (Forecast Advisory Band Wording)
+[PASS] 6.5 Tumana Unavailable Forecast Sends Nothing (Null Message)
+[PASS] 6.6 Sto/Nangka Unavailable Forecast Sends Nothing (Null Message)
+[*] Phase 3: Inspecting persisted DailyForecast records for 2026-08-20...
+[-] [nangka] No DailyForecast record found for 2026-08-20. Skipping FCM.
+[-] [tumana] No DailyForecast record found for 2026-08-20. Skipping FCM.
+[PASS] 6.7 [Required Test A] Firebase Unavailable Marks Record Failed (Never Sent)
+[*] Phase 3: Inspecting persisted DailyForecast records for 2026-08-20...
+[-] [nangka] No DailyForecast record found for 2026-08-20. Skipping FCM.
+[-] [tumana] No DailyForecast record found for 2026-08-20. Skipping FCM.
+[PASS] 6.8 [Required Test B] All Topic Sends Fail Marks Record Failed (Eligible for Retry)
+[*] Phase 3: Inspecting persisted DailyForecast records for 2026-08-20...
+📢 [Phase 3 FCM] Dispatched sto_nino advisory to [barangay_santo_nino]: "Forecast for Aug 20: 13.50 m (SAFE). Primary model."
+📢 [Phase 3 FCM] Dispatched sto_nino advisory to [barangay_calumpang]: "Forecast for Aug 20: 13.50 m (SAFE). Primary model."
+📢 [Phase 3 FCM] Dispatched sto_nino advisory to [barangay_industrial_valley]: "Forecast for Aug 20: 13.50 m (SAFE). Primary model."
+📢 [Phase 3 FCM] Dispatched sto_nino advisory to [barangay_barangka]: "Forecast for Aug 20: 13.50 m (SAFE). Primary model."
+📢 [Phase 3 FCM] Dispatched sto_nino advisory to [barangay_san_roque]: "Forecast for Aug 20: 13.50 m (SAFE). Primary model."
+📢 [Phase 3 FCM] Dispatched sto_nino advisory to [barangay_santa_elena]: "Forecast for Aug 20: 13.50 m (SAFE). Primary model."
+📢 [Phase 3 FCM] Dispatched sto_nino advisory to [barangay_tanong]: "Forecast for Aug 20: 13.50 m (SAFE). Primary model."
+📢 [Phase 3 FCM] Dispatched sto_nino advisory to [barangay_jesus_dela_pena]: "Forecast for Aug 20: 13.50 m (SAFE). Primary model."
+[-] [nangka] No DailyForecast record found for 2026-08-20. Skipping FCM.
+[-] [tumana] No DailyForecast record found for 2026-08-20. Skipping FCM.
+[PASS] 6.9 [Required Test C] Successful Delivery Marks Record Sent with Timestamp
+[*] Phase 3: Inspecting persisted DailyForecast records for 2026-08-20...
+[-] [sto_nino] Advisory for 2026-08-20 was already dispatched at Thu Aug 20 2026 15:00:00 GMT+0800 (Philippine Standard Time). Skipping deduplicated send.
+[-] [nangka] No DailyForecast record found for 2026-08-20. Skipping FCM.
+[-] [tumana] No DailyForecast record found for 2026-08-20. Skipping FCM.
+[PASS] 6.10 [Required Test D] Deduplicated Second Run Skips Dispatching
+[PASS] 6.11 [Required Test E] Atomic Concurrent Claim Prevents Race Conditions
+[PASS] 6.12 [Required Test F] Canonical Barangay Topic Consistency Across All Server Paths
+[PASS] 6.13 [Check I] Five-Minute Background Telemetry Sync Does NOT Trigger FCM
+[DailyScheduler] Manual forecast run triggered for target date: 2026-08-20 (sendNotifications: false)
+[DailyScheduler] Manual forecast run triggered for target date: 2026-08-20 (sendNotifications: true)
+[*] Phase 3: Inspecting persisted DailyForecast records for 2026-08-20...
+[-] [sto_nino] No DailyForecast record found for 2026-08-20. Skipping FCM.
+[-] [nangka] No DailyForecast record found for 2026-08-20. Skipping FCM.
+[-] [tumana] No DailyForecast record found for 2026-08-20. Skipping FCM.
+[PASS] 6.14 [Check J] Manual triggerManualForecastRun Defaults sendNotifications = false
+[PASS] 6.15 [Check K] Daily Notification Consumes Persisted DailyForecast, Not Live Sensors
+[PASS] 6.16 [Check L] Manual Admin Alert Endpoint Exists and Uses Canonical Topic Format
+[PASS] 7.1 Zero rejectUnauthorized: false Across Server Code
+[PASS] 7.2 Schema Validation for DailyForecast Deduplication & Sending Fields
+[PASS] 7.3 Server Critical Files Parse Successfully (node --check)
+
+================================================================
+PHASE 5: CONTROLLED SUPER-ADMIN RECALIBRATION & GOVERNANCE
+================================================================
+
+[PASS] 8.1 [Required Test 12] Zero Occurrences of Hardcoded JWT Secret Fallback
+[PASS] 8.2 [Required Test 13] Missing JWT_SECRET Fails Closed Immediately
+[PASS] 8.3 [Security Test A] Unauthenticated Calibration Access is Rejected (401)
+[PASS] 8.4 [Security Test B] Regular Admin User Cannot Mutate Calibrations (403)
+[PASS] 8.5 [Security Test C] Super-Admin Role Successfully Passes Super-Admin Guard
+[PASS] 8.6 [Security Test D] Activation Requires Super-Admin Password Reconfirmation
+[PASS] 8.7 [Security Test E] Rollback Requires Super-Admin Password Reconfirmation
+[PASS] 8.8 [Security Test F] Client-Submitted Custom Beta Coefficients are Prohibited
+[PASS] 8.9 [Security Test G] Quarantined Legacy Training Endpoints Return 410 Gone
+[PASS] 8.10 [Security Test H] Passwords and Hashes Never Stored in Calibration Records or Audit Logs
+[PASS] 9.1 [Required Test 1] Historical Merge Combines Protected & New Yearly Rows Chronologically
+[PASS] 9.2 [Required Test 2] Cross-Year Exact Lag Arithmetic Across Calendar Boundary
+[PASS] 9.3 [Required Test 3] Overlap with Protected History is Strictly Rejected
+[PASS] 9.4 [Required Test 4] Duplicate Upload Dates Inside Upload are Strictly Rejected
+[PASS] 9.5 [Required Test 5] Invalid and Future Dates are Strictly Rejected
+[PASS] 9.6 [Required Test 6] Source Survives Server Restart Semantics (Durable Snapshot)
+[PASS] 9.7 [Required Test 7] Client Body Row Replacement is Prohibited on /run
+[PASS] 9.8 [Required Test 8] Chronological Evaluation Subset vs Full-History Final Refit
+[PASS] 9.9 [Required Test 9] Activation Deploys Final Refit Coefficients (Not Evaluation Subset)
+[PASS] 9.10 [Required Test 10] Canonical Reproduction Fixture Parity (<= 1e-5 for Sto, Nangka, Tumana)
+[PASS] 9.11 [Required Test 11] Future Year Recalibration Does NOT Require Old Beta Equality
+[PASS] 9.12 [Required Test A] Real Protected CSV + Raw 2024 Daily Data for Sto. Niño
+[PASS] 9.13 [Required Test B] Real Protected CSV + Raw 2024 Daily Data for Nangka
+[PASS] 9.14 [Required Test C] Real Protected CSV + Raw 2024 Daily Data for Tumana
+[PASS] 9.15 [Required Test D] Extreme New Year Data Changes Final OLS Refit
+[PASS] 9.16 [Required Test E] Cross-Year Exact Lags Built from Raw Observations with Actual Protected File
+[PASS] 9.17 [Required Test F] Second-Year Cumulative History (2016–2023 + DEPLOYED 2024 + Current 2025)
+[PASS] 9.18 [Required Test G] Prior Accepted Year Snapshot Resolves Cross-Year Lags
+[PASS] 9.19 [Required Test H] Overlap with Prior Accepted Year is Strictly Rejected
+[PASS] 9.20 [Required Test I] Canonical Fixture Flag Cannot Be Set by HTTP Upload
+[PASS] 9.21 [Required Test J] Fixture Records Cannot Be Activated for Production
+[PASS] 9.22 [Required Test K] Strict Yearly Raw-Schema Validation and Malformed Text Rejection
+[PASS] 9.23 [Alias Test A] Sto Alternate Target/Rain Aliases Contribute Full History
+[PASS] 9.24 [Alias Test B] Sto Lowercase Date Alias — Full History Preserved
+[PASS] 9.25 [Alias Test C] Nangka Alias Mix — Historical + Yearly Both Contribute
+[PASS] 9.26 [Alias Test D] Tumana Alias Mix — Historical + Yearly Both Contribute (Strictly Unmapped)
+[PASS] 9.27 [Alias Test E] Prior Year with Different Aliases — Three-Source Cumulative History
+[PASS] 9.28 [Alias Test F] Overlap Detection Works Across Different Date Aliases
+[PASS] 9.29 [Alias Test G] Canonical Headers Still Produce Correct Results
+[PASS] 9.30 [Alias Test H] Canonical Parity After Normalization (All Three Stations <= 1e-5)
+[PASS] 9.31 [Route Test A] HTTP Upload Route Cutoff Normalization Rejects Overlapping Date with Heterogeneous Aliases
+[PASS] 9.32 [Route Test B] HTTP Upload Route Cutoff Normalization Accepts Valid Successive Year
+[PASS] 10.1 Pure OLS Solver Correctness on Synthetic Matrix
+[PASS] 10.2 Singular / Rank-Deficient Matrix Rejection
+[PASS] 10.3 Heteroskedasticity-Consistent HC3 Covariance Standard Errors
+[PASS] 10.4 HC3 Inference Strictly Does NOT Alter Point Predictions
+[PASS] 10.5 VIF Collinearity Diagnostics Functionality
+[PASS] 10.6 Complete-Case Rule (Missing Rows Dropped, Never Filled)
+[PASS] 10.7 Diagnostic Failure Blocks Approval and Activation
+[PASS] 10.8 Cryptographic Verification of Protected Historical Datasets on Load
+[PASS] 10.9 Dynamic Active Model Version Resolver Fallback Safety
+[PASS] 10.10 Custom Deployed Version Evaluation in DailyForecastService
+[PASS] 10.11 Immutable Audit Log Schema and Action Tracking
+[PASS] 11.1 Null daily forecast predictedWaterLevel does NOT become 0 or 0.00
+[PASS] 11.2 Null daily forecast statusBand is UNAVAILABLE and does NOT become SAFE
+[PASS] 11.3 Active prediction UI source contains NO "PROJECTED PEAK" or "Projected Peak"
+[PASS] 11.4 Active prediction UI source contains NO "24-Hour River Level Path" or "24-Hour Projected Timeline"
+[PASS] 11.5 Active TrainModel routing routes to Phase 5 controlled calibration governance (Algorithm.jsx)
+
+================================================================
+TEST SUMMARY: 95/95 PASSED
+================================================================
+
+ALL PHASE 1B, 2, 3, 4, AND 5 TESTS PASSED SUCCESSFULLY.
+
+--- STDERR ---
+[!] Firebase Admin not initialized; cannot dispatch FCM for sto_nino. Setting notificationStatus = 'failed'.
+[!] FCM dispatch failed for barangay_santo_nino: Simulated FCM Network Timeout
+[!] FCM dispatch failed for barangay_calumpang: Simulated FCM Network Timeout
+[!] FCM dispatch failed for barangay_industrial_valley: Simulated FCM Network Timeout
+[!] FCM dispatch failed for barangay_barangka: Simulated FCM Network Timeout
+[!] FCM dispatch failed for barangay_san_roque: Simulated FCM Network Timeout
+[!] FCM dispatch failed for barangay_santa_elena: Simulated FCM Network Timeout
+[!] FCM dispatch failed for barangay_tanong: Simulated FCM Network Timeout
+[!] FCM dispatch failed for barangay_jesus_dela_pena: Simulated FCM Network Timeout

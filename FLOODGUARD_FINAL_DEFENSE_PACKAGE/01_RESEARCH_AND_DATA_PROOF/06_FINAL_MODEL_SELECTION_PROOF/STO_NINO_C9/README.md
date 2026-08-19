@@ -1,0 +1,23 @@
+# Sto. Niño Station — Candidate 9 Defense Dossier
+
+- **Station ID:** `sto_nino`
+- **Certified Model:** Candidate 9
+- **Target Variable:** Daily Maximum Water Level (m)
+- **Specification:** $\text{Sto\_WL}_t = 3.5459 + 0.4642 \cdot \text{Sto}_{t-1} + 0.2457 \cdot \text{Sto}_{t-3} + 0.0115 \cdot \text{BosoBoso}_{t-1}$
+- **Key Metrics:**
+  - Training N: 1,969 | Validation N: 472 | Final Refit N: 2,441
+  - Validation MAE: `0.316347 m` | Validation RMSE: `0.591145 m` | Validation R²: `0.572229`
+  - Final Refit R²: `~0.8988` | Max VIF: `2.0610`
+  - HC3 Significance: All slopes statistically significant ($p < 0.001$).
+- **Threshold Mapping Allowed:** `true` (Alert: 15.00m, Alarm: 16.00m, Critical: 17.00m)
+- **Key Evidence:**
+  - PDF: `FLOODGUARD_STO_NINO_COMPLETE_DEFENSE_RECORD_R3_RECONCILED.pdf`
+  - Locked Package: `01_RESEARCH_AND_DATA_PROOF/08_CANONICAL_RESEARCH_ARCHIVE/FLOODGUARD_STO_NINO_CANDIDATE9_FINAL_DEFENSE_LOCKED.zip`
+- **Selection & Retention Rationale:**
+  - Candidate 13 was the development-validation tournament winner.
+  - Candidate 9 was NOT the overall validation winner (rank 9 in raw pairwise MAE ranking).
+  - Candidate 9 satisfied all HC3, VIF, and model-form requirements.
+  - Candidate 9 used a practical single-upstream dependency footprint (Boso-Boso rain).
+  - Candidate 9 retrospective availability was stronger than Candidate 15 in the documented comparison.
+  - Candidate 9 performed strongly against Candidate 15 and persistence on the specific examined critical-event subsets (named typhoon, alert, rapid-change, rapid-rise, and operational-critical subsets).
+  - Candidate 9 is an operationally balanced certified model, not a universal storm winner.

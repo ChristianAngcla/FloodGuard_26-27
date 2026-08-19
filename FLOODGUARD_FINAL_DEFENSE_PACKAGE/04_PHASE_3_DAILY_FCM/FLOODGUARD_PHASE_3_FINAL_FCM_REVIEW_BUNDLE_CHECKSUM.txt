@@ -1,0 +1,6 @@
+FLOODGUARD_PHASE_3_FINAL_FCM_REVIEW_BUNDLE.zip
+SHA-256: a8ee7384cc929bd33d6e9fc55bc1703eaed5eb447d0e86768845b3393b42409e
+File Size: 46797 bytes
+Total Files: 18
+CRC Integrity Test: PASS (Zero errors detected)
+Generated: 2026-08-19T12:32:12.462551+00:00

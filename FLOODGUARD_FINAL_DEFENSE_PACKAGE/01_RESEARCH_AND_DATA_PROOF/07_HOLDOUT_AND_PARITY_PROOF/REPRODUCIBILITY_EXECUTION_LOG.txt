@@ -1,0 +1,25 @@
+================================================================================
+FLOODGUARD STO. NIÑO: REPRODUCIBILITY SCRIPT EXECUTION LOG
+================================================================================
+Script Executed: audit_gemini_original_split.py
+Execution Timestamp: 2026-08-18 17:48:44
+Execution Cwd: C:\Users\chris\Desktop\codes\floodguard\data compilation\FLOODGUARD_STO_NINO_CANDIDATE9_FINAL_DEFENSE_CERTIFIED
+Command: python audit_gemini_original_split.py --input 04_DAILY_AND_LAGS/CLEAN_DAILY_DATASET_2016_2025.csv --output REPRODUCIBILITY_OUTPUT
+Exit Code: 0
+Runtime: 2.026 seconds
+Python Environment: 3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]
+
+--- STDOUT ---
+Independent reproducibility execution successful.
+Generated results written to: C:\Users\chris\Desktop\codes\floodguard\data compilation\FLOODGUARD_STO_NINO_CANDIDATE9_FINAL_DEFENSE_CERTIFIED\REPRODUCIBILITY_OUTPUT
+
+--- STDERR ---
+
+
+--- REPRODUCIBILITY COMPARISON ---
+1. Candidate 1–15 Table: DETERMINISTIC_MATCH (Candidate 13 Rank 1, Candidate 15 Rank 2, Candidate 9 Rank 9)
+2. 105 Pairwise Comparisons: DETERMINISTIC_MATCH (105 / 105 Pairs Bitwise Identical)
+3. Candidate 9 Refit Coefficients: DETERMINISTIC_MATCH (b0=3.5458516106, b1=0.4641997604, b2=0.2456934414, b3=0.0115250490)
+4. 2024–2025 557 Common Evaluation: DETERMINISTIC_MATCH (C9 MAE=0.241542 m, Bias=-0.076372 m; C15 MAE=0.234434 m; Persistence MAE=0.164255 m)
+Verification Verdict: Rebuild A and Rebuild B were bitwise identical within the documented Python environment. Cross-platform reproduction matched numerical results within the stated tolerance.
+================================================================================

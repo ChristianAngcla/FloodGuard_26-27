@@ -1,0 +1,12 @@
+Stage,Count,Lost_From_Previous,Description
+1. Total Calendar Days (2016-01-01 to 2025-12-31),3653,0,"Complete 10-year horizon: 3,650 ordinary days plus 3 leap days"
+2. After Sto. Niño WL Strict 24/24 Availability,3459,194,Requires strict 24/24 coverage at every station retained through Sto. Niño WL
+3. After Nangka WL Strict 24/24 Availability,2905,554,Requires strict 24/24 coverage at every station retained through Nangka WL
+4. After Mt. Boso-Boso Rain Strict 24/24 Availability,2895,10,Requires strict 24/24 coverage at every station retained through Mt. Boso-Boso Rain
+5. After Mt. Campana Rain Strict 24/24 Availability,2557,338,Requires strict 24/24 coverage at every station retained through Mt. Campana Rain
+6. After Nangka Rain Strict 24/24 Availability,2185,372,Requires strict 24/24 coverage at every station retained through Nangka Rain
+7. After Mt. Oro Rain Strict 24/24 Availability,2143,42,Requires strict 24/24 coverage at every station retained through Mt. Oro Rain
+8. After Mt. Aries Rain Strict 24/24 Availability,2128,15,Requires strict 24/24 coverage at every station retained through Mt. Aries Rain
+9. After Exact t-1 Day Availability,1832,296,Requires all-seven strict coverage on t and calendar day t-1
+10. After Exact t-2 Day Availability,1627,205,"Requires all-seven strict coverage on t, t-1, and t-2"
+"11. All-Seven Four-Day Diagnostic Sample (t, t-1, t-2, t-3)",1473,154,Strict unbroken four-day block across all seven stations; not a fixed-N 56-predictor model sample

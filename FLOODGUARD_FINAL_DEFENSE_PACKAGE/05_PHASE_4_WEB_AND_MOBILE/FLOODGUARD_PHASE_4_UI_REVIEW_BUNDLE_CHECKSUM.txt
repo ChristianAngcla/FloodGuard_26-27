@@ -1,0 +1,25 @@
+================================================================
+FLOODGUARD PHASE 4 REVIEW BUNDLE CHECKSUM & INTEGRITY RECORD
+================================================================
+Filename: FLOODGUARD_PHASE_4_UI_REVIEW_BUNDLE.zip
+SHA-256:  b74d35ca13a029fd2154b24fa55301d19389e3c57f326c6cf7b9698aeecbeebc
+Size:     67769 bytes
+Files:    15 files
+CRC Check: PASSED (0 CRC errors)
+
+Archive File Index:
+  - 00_START_HERE/README.md
+  - 01_WEB_SOURCE/Overview.jsx
+  - 01_WEB_SOURCE/PredictionTool.jsx
+  - 01_WEB_SOURCE/api.js
+  - 01_WEB_SOURCE/apiCache.js
+  - 02_FLUTTER_SOURCE/barangay_details_sheet.dart
+  - 02_FLUTTER_SOURCE/flood_api_service.dart
+  - 02_FLUTTER_SOURCE/home_map_screen.dart
+  - 02_FLUTTER_SOURCE/station_thresholds.dart
+  - 03_SERVER_CONTRACT_REFERENCE/dailyFcmDispatcher.js
+  - 03_SERVER_CONTRACT_REFERENCE/dailyForecastService.js
+  - 03_SERVER_CONTRACT_REFERENCE/dailyScheduler.js
+  - 04_TEST_EVIDENCE/PHASE_4_UI_TEST_OUTPUT.txt
+  - 05_REPORT/FLOODGUARD_PHASE_4_UI_ALIGNMENT_REPORT.md
+  - 06_MANIFEST/FILE_MANIFEST_SHA256.csv
