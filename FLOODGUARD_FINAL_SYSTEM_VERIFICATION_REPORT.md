@@ -60,19 +60,21 @@ $$\text{Nangka\_WL}(t) = 8.114816713807127 + 0.489768812135568 \cdot \text{Nangk
 ### C. Tumana Station (`tumana`) — Candidate 8
 $$\text{Tumana\_WL}(t) = 1.5147240224821763 + 0.8735442115350864 \cdot \text{Tumana\_WL}_{t-1} + 0.008481630145296813 \cdot \text{PAGASA\_SG\_Rain}_{t-1}$$
 - **Target STRICTLY:** PAGASA-reported daily Tumana water-level observation
-- **Threshold Mapping Allowed:** `false` (`thresholds = null`)
-- **Status Band:** `UNMAPPED_DAILY_OBSERVATION`
-- **Prohibitions:** Never described as daily maximum, daily mean, fixed-time reading, peak, depth, probability, or automated evacuation trigger.
+- **Official Operational Warning Thresholds:** Alert Level: **17.26 EL.m**, Alarm Level: **18.26 EL.m**, Critical Level: **19.26 EL.m** (DOST-PAGASA FFWS official datum)
+- **Live Monitoring (Path A):** Live telemetry is compared against 17.26 / 18.26 / 19.26 m to generate real-time emergency warnings and citizen FCM push alerts.
+- **Daily Forecast (Path B):** Next-calendar-day predictions map to threshold bands as decision-support advisories (`thresholdMappingAllowed: true`).
+- **Prohibitions:** Never described as daily maximum, daily mean, fixed-time reading, peak, depth, probability, or automated evacuation trigger from daily forecasts alone.
 
 ---
 
-## 4. Full Server Regression Suite Execution (81 / 81 Tests PASS)
+## 4. Full Server Regression Suite Execution (88 / 88 Tests PASS)
 
 All automated test suites executed via `node server/tests/phase1b_tests.mjs` passed with zero errors:
 
 | Section | Scope | Tests Executed | Passed | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Section 1–3** | Phase 1B Certified Server Models & Math Parity | Tests 1.1 – 3.3 | 7 / 7 | ✅ PASS |
+| **Section 3 (Add)** | Tumana Live Thresholds & E2E Segregation Cases | Tests 3.4 – 3.10 | 7 / 7 | ✅ PASS |
 | **Section 4** | Phase 2 Strict 24/24 Daily Aggregation Pipeline | Tests 4.1 – 4.2 | 2 / 2 | ✅ PASS |
 | **Section 6** | Phase 3 Daily Deduplicated FCM Dispatcher & Topics | Tests 6.1 – 6.16 | 16 / 16 | ✅ PASS |
 | **Section 7** | Server Infrastructure, Schema, & Syntax Validation | Tests 7.1 – 7.3 | 3 / 3 | ✅ PASS |
@@ -81,7 +83,7 @@ All automated test suites executed via `node server/tests/phase1b_tests.mjs` pas
 | **Section 9 (Add)** | Phase 5 Column-Alias Normalization Layer | Tests 9.23 – 9.30 | 8 / 8 | ✅ PASS |
 | **Section 9 (Add)** | Phase 5 HTTP Upload Route Cutoff Normalization | Tests 9.31 – 9.32 | 2 / 2 | ✅ PASS |
 | **Section 10** | Phase 5 OLS Solver, HC3 Covariance, VIF & Lifecycles | Tests 10.1 – 10.11 | 11 / 11 | ✅ PASS |
-| **TOTAL** | **Master Regression Suite** | **81 Tests** | **81 / 81** | ✅ **100% PASS** |
+| **TOTAL** | **Master Regression Suite** | **88 Tests** | **88 / 88** | ✅ **100% PASS** |
 
 ---
 

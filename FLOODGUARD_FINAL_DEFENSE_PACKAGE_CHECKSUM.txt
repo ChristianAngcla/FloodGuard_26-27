@@ -1,11 +1,29 @@
 ================================================================================
-FLOODGUARD MASTER FINAL DEFENSE PACKAGE CHECKSUM & INTEGRITY RECORD
+FLOODGUARD MASTER DEFENSE PACKAGE — CRYPTOGRAPHIC VERIFICATION RECORD
 ================================================================================
-Package Archive: FLOODGUARD_FINAL_DEFENSE_PACKAGE.zip
-SHA-256 Hash:   d7f507d71a266bc181dbf13aa2d284557f4fe207b94d032cdb83549ca722831f
-File Size:      9063257 bytes
-File Count:     77 files (Payload: 76 files + 1 Checksum Manifest)
-CRC Integrity:  PASSED (0 corrupt files)
-Status:         SEALED & CRYPTOGRAPHICALLY VERIFIED
+Archive File:       FLOODGUARD_FINAL_DEFENSE_PACKAGE.zip
+Package Version:    2.0.0-FINAL-OPERATIONAL-SEALED
+Generated At:       2026-08-20T01:15:00+08:00
+System:             FloodGuard (Marikina River Basin Flood Warning System)
+Authority:          Christian Angcla / Senior Integration Developer & Evidence Archivist
+
+SHA-256 Hash:
+95279cf1e48642a03f21e6d9fc19dc252fc668a5c8e020850661de677be23fce
+
+Archive Metrics:
+Total File Count:   78 files
+Payload Files:      77 files
+Manifest Entries:   77 entries
+Archive Size:       9113793 bytes (8.69 MB)
+Archive Integrity:  PASSED (0 CRC-32 errors across all files)
+
+Authoritative Operational Warning Thresholds:
+- Sto. Niño: Alert 15.00m | Alarm 16.00m | Critical 17.00m
+- Nangka:     Alert 16.50m | Alarm 17.10m | Critical 17.70m
+- Tumana:     Alert 17.26m | Alarm 18.26m | Critical 19.26m (PAGASA FFWS EL.m datum)
+
+Sealed Models:
+- Sto. Niño:  Candidate 9 (AR2 + Boso-Boso Rain lag-1), N=2,441, R²=0.8988, VIF=2.0610
+- Nangka:      Candidate 4 (AR1 + Boso-Boso Rain lag-1), N=2,128, R²=0.4335, VIF=1.5957
+- Tumana:      Candidate 8 (AR1 + Science Garden Rain lag-1), N=1,648, R²=0.8426, VIF=1.1212
 ================================================================================
-d7f507d71a266bc181dbf13aa2d284557f4fe207b94d032cdb83549ca722831f  FLOODGUARD_FINAL_DEFENSE_PACKAGE.zip
