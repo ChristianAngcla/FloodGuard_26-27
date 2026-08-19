@@ -11,12 +11,14 @@
 
 ## 1. Executive Summary
 
-All canonical research proofs, model tournament workbooks, data gates, phase deliverables, operational DOST-PAGASA FFWS telemetry evidence, and the **Post-Tumana 90/90 System Verification Baseline** have been reconciled, verified, and packaged into the single, cryptographically verified Master Defense Package.
+All canonical research proofs, model tournament workbooks, data gates, phase deliverables, operational DOST-PAGASA FFWS telemetry evidence, **UI & Forecast Integrity Assurances**, and the **Post-Tumana 95/95 System Verification & Live Deployment Baseline** have been reconciled, verified, and packaged into the single, cryptographically verified Master Defense Package.
 
 - **Archive File:** `FLOODGUARD_FINAL_DEFENSE_PACKAGE.zip`
-- **Total Files in Archive:** `82` files
-- **SHA-256 Checksum:** `2e80d87e40726779f1985d5e89bf51182c826f3379c62b85d2cbc401fceb30fd`
+- **Total Files in Archive:** `83` files
+- **SHA-256 Checksum:** `4e2c376a51b7ffa742fce93e8ae59c661f627398a8dfd8a3462a175951570568`
 - **CRC-32 Integrity:** **PASSED (0 corrupt files)**
+- **Public URL:** [`https://floodguard-ai-6a9b6.web.app`](https://floodguard-ai-6a9b6.web.app)
+- **Production API:** [`https://floodguard-api-xyjx.onrender.com`](https://floodguard-api-xyjx.onrender.com)
 
 ---
 
@@ -39,3 +41,4 @@ All canonical research proofs, model tournament workbooks, data gates, phase del
 2. **Path B — Next-Calendar-Day Daily Decision-Support Forecasting:**
    - 07:00 automated pipeline evaluates certified MLR formulas using completed historical lags.
    - Generates daily decision-support advisories without triggering live emergency evacuation sirens.
+   - Missing data strictly displayed as `"Forecast unavailable"` (never `0.00 m` or fake `SAFE`).
