@@ -11,11 +11,11 @@
 
 ## 1. Executive Summary
 
-All canonical research proofs, model tournament workbooks, data gates, phase deliverables, and newly incorporated **Tumana Bridge Operational Water-Level Warning Threshold Evidence (Alert: 17.26m, Alarm: 18.26m, Critical: 19.26m)** have been reconciled, verified, and packaged into the single, cryptographically verified Master Defense Package.
+All canonical research proofs, model tournament workbooks, data gates, phase deliverables, and newly incorporated **PAGASA FFWS Operational Threshold Table & Rainfall Screen Evidence (Sto. Niño: 15/16/17m, Nangka: 16.5/17.1/17.7m, Tumana Bridge: 17.26/18.26/19.26m)** have been reconciled, verified, and packaged into the single, cryptographically verified Master Defense Package.
 
 - **Archive File:** `FLOODGUARD_FINAL_DEFENSE_PACKAGE.zip`
-- **Total Files in Archive:** `78` files
-- **SHA-256 Checksum:** `95279cf1e48642a03f21e6d9fc19dc252fc668a5c8e020850661de677be23fce`
+- **Total Files in Archive:** `82` files
+- **SHA-256 Checksum:** `eac8072b188f00dbac8bde0f36f15910e33bc9fa96d48a1b7a6c607495679e5a`
 - **CRC-32 Integrity:** **PASSED (0 corrupt files)**
 
 ---
@@ -34,7 +34,7 @@ All canonical research proofs, model tournament workbooks, data gates, phase del
 
 1. **Path A — Live Emergency Telemetry & Alerting:**
    - Real-time sensor readings compared against official thresholds (Sto: 15/16/17m, Nangka: 16.5/17.1/17.7m, Tumana: 17.26/18.26/19.26m).
-   - Generates immediate citizen mobile push notifications when live telemetry crosses warning stages.
+   - Generates immediate citizen mobile push notifications when live telemetry crosses warning stages upon state transition / escalation.
 2. **Path B — Next-Calendar-Day Daily Decision-Support Forecasting:**
    - 07:00 automated pipeline evaluates certified MLR formulas using completed historical lags.
    - Generates daily decision-support advisories without triggering live emergency evacuation sirens.
