@@ -36,3 +36,10 @@
 
 ### Q4: How is missing daily forecast data displayed to users?
 **Answer:** As `"Forecast unavailable"` (Test 11.1 & Test 11.2). Missing data is never coerced to `0.00 m` or defaulted to `SAFE`.
+
+### Q5: How do you prove the deployed daily model receives real t-1/t-3 data automatically?
+**Answer:** In `07_FINAL_SYSTEM_VERIFICATION/FLOODGUARD_PRODUCTION_DAILY_PIPELINE_BOOTSTRAP_REPORT.md`, which proves:
+- Live 5-minute telemetry sync writes directly into `raw_telemetry_readings` in MongoDB Atlas with strict GlobalSign intermediate CA validation.
+- Daily finalization aggregates 24/24 hourly windows into `DailyObservation` at midnight.
+- 07:00 AM production scheduler evaluates exact $t-1$ / $t-3$ calendar lags and generates `DailyForecast` records idempotently.
+- Verified in production with Tumana Candidate 8 generating a real `primary_model` prediction ($\hat{Y} = 15.75\text{ m}$) for target date 2026-08-20.

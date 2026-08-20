@@ -1,44 +1,6 @@
-================================================================================
-FLOODGUARD MASTER DEFENSE PACKAGE — CRYPTOGRAPHIC VERIFICATION RECORD
-================================================================================
-Archive File:       FLOODGUARD_FINAL_DEFENSE_PACKAGE.zip
-Package Version:    2.0.0-FINAL-OPERATIONAL-SEALED
-Generated At:       2026-08-20T02:35:00+08:00
-System:             FloodGuard (Marikina River Basin Flood Warning System)
-Authority:          Christian Angcla / Senior Integration Developer & Evidence Archivist
-
-SHA-256 Hash:
-4cc17f9202b817bfa1cd6f1ff7c640d552dc4eea0b926541b4d0ac176bb85bd7
-
-Archive Metrics:
-Total File Count:   127 files
-Payload Files:      126 files
-Manifest Entries:   126 entries
-Archive Size:       23553650 bytes (22.46 MB)
-Archive Integrity:  PASSED (0 CRC-32 errors across all files)
-
-Production Deployment:
-- Hosting Target:   floodguard-ai-6a9b6 (Firebase Hosting)
-- Public URL:       https://floodguard-ai-6a9b6.web.app
-- Backend API Host: https://floodguard-api-xyjx.onrender.com
-- Deployment State: LIVE & FULLY OPERATIONAL (HTTP 200)
-
-Authoritative Operational Warning Thresholds:
-- Sto. Niño: Alert 15.00m | Alarm 16.00m | Critical 17.00m
-- Nangka:     Alert 16.50m | Alarm 17.10m | Critical 17.70m
-- Tumana:     Alert 17.26m | Alarm 18.26m | Critical 19.26m (PAGASA FFWS EL.m datum)
-
-Sealed Models:
-- Sto. Niño:  Candidate 9 (AR2 + Boso-Boso Rain lag-1), N=2,441, R²=0.8988, VIF=2.0610
-- Nangka:      Candidate 4 (AR1 + Boso-Boso Rain lag-1), N=2,128, R²=0.4335, VIF=1.5957
-- Tumana:      Candidate 8 (AR1 + Science Garden Rain lag-1), N=1,648, R²=0.8426, VIF=1.1212
-
-Verification Baseline:
-- Server Regression Suite: 95 / 95 PASSED (100%)
-- Static Syntax Checks: 15 / 15 Files Validated (node --check)
-- Web Client Build: 0 Errors (Vite 7.3.6)
-- Admin App Build: 0 Errors (Vite 7.3.2)
-- Flutter Mobile Analysis: 0 Issues (flutter analyze)
-- Flutter Debug APK: Built (build\app\outputs\flutter-apk\app-debug.apk)
-- Live Screenshots: 17 Production Images Verified & Catalogs Synchronized
-================================================================================
+Archive: FLOODGUARD_FINAL_DEFENSE_PACKAGE.zip
+Total Files in Archive: 107
+Manifest Entries in MASTER_FILE_SHA256.csv: 106
+Archive Size: 16370485 bytes
+Archive SHA-256: 223082a29dd9c4324cb3006a76de315eccb7a234ca02d26dab660edaf7234c9d
+Status: SEALED & CRYPTOGRAPHICALLY VERIFIED
