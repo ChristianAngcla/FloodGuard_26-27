@@ -1,0 +1,37 @@
+{
+  "city_wide_live_status": "SAFE",
+  "coverage": "2/3",
+  "sto_nino": {
+    "currentReading": 13.33,
+    "rawReading": "13.33",
+    "sensorStatus": "VALID",
+    "liveStatus": "SAFE",
+    "sourceTimePst": "2026-08-20 14:10 PST",
+    "lastKnownValid": {
+      "value": 13.33,
+      "sourceTimePst": "2026-08-20 14:10 PST"
+    }
+  },
+  "nangka": {
+    "currentReading": null,
+    "rawReading": "22.21(*)",
+    "sensorStatus": "SUSPECT",
+    "liveStatus": "UNAVAILABLE",
+    "sourceTimePst": "2026-08-20 14:10 PST",
+    "lastKnownValid": {
+      "value": 15.9,
+      "sourceTimePst": "Historical Baseline / Stored"
+    }
+  },
+  "tumana": {
+    "currentReading": 14.06,
+    "rawReading": "14.06",
+    "sensorStatus": "VALID",
+    "liveStatus": "SAFE",
+    "sourceTimePst": "2026-08-20 14:10 PST",
+    "lastKnownValid": {
+      "value": 14.06,
+      "sourceTimePst": "2026-08-20 14:10 PST"
+    }
+  }
+}

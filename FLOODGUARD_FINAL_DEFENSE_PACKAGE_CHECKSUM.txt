@@ -1,6 +1,6 @@
 Archive: FLOODGUARD_FINAL_DEFENSE_PACKAGE.zip
-Total Files in Archive: 107
+Total Files in Archive: 106
 Manifest Entries in MASTER_FILE_SHA256.csv: 106
-Archive Size: 16370485 bytes
-Archive SHA-256: 223082a29dd9c4324cb3006a76de315eccb7a234ca02d26dab660edaf7234c9d
+Archive Size: 16405861 bytes
+Archive SHA-256: 3ca155b0dfae8352fa4d0d57b7cdb83066ec781a6a6e19b62e9c14ce2bbdd7d7
 Status: SEALED & CRYPTOGRAPHICALLY VERIFIED
